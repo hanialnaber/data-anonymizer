@@ -47,10 +47,6 @@ install:
 	$(PIP) install -r requirements.txt
 	$(PIP) install -e .
 
-install-dev:
-	$(PIP) install -r dev-requirements.txt
-	$(PIP) install -e .
-
 dev:
 	python scripts/dev.py dev
 
@@ -124,7 +120,7 @@ profile:
 setup-env:
 	$(PYTHON) -m venv .venv
 	.venv\Scripts\pip install --upgrade pip
-	.venv\Scripts\pip install -r dev-requirements.txt
+	.venv\Scripts\pip install -r requirements.txt
 	.venv\Scripts\pip install -e .
 
 # Enhanced clean target

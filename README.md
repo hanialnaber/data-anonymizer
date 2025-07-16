@@ -41,13 +41,65 @@ A comprehensive web application for anonymizing sensitive data in CSV and Excel 
 
 ### Running the Application
 
-#### Option 1: Quick Start (Recommended)
+#### Option 1: One-Command Launch (Recommended) 🚀
+
+**For Windows:**
+```powershell
+# PowerShell
+.\launch.ps1
+
+# Or Command Prompt
+launch.bat
+```
+
+**For Linux/macOS:**
+```bash
+./launch.sh
+```
+
+This single command will:
+- ✅ Set up virtual environment
+- ✅ Install all dependencies
+- ✅ Generate sample data
+- ✅ Start both FastAPI backend and Streamlit frontend
+- ✅ Open the web interface automatically
+
+#### Option 2: Advanced Launch Options
+
+**Setup only (no start):**
+```bash
+# Linux/macOS
+./launch.sh --setup-only
+
+# Windows PowerShell
+.\launch.ps1 -SetupOnly
+```
+
+**Skip dependency installation:**
+```bash
+# Linux/macOS
+./launch.sh --no-deps
+
+# Windows PowerShell
+.\launch.ps1 -NoDeps
+```
+
+**Skip sample data generation:**
+```bash
+# Linux/macOS
+./launch.sh --no-samples
+
+# Windows PowerShell
+.\launch.ps1 -NoSamples
+```
+
+#### Option 3: Manual Setup (Alternative)
 ```bash
 # Run both backend and frontend together
 python scripts/dev.py dev
 ```
 
-#### Option 2: Run Services Separately
+#### Option 4: Run Services Separately
 ```bash
 # Terminal 1: Start the backend API
 python scripts/dev.py backend
@@ -56,7 +108,7 @@ python scripts/dev.py backend
 python scripts/dev.py frontend
 ```
 
-#### Option 3: Using Make Commands
+#### Option 5: Using Make Commands
 ```bash
 # Run both services
 make dev
@@ -65,6 +117,22 @@ make dev
 make backend    # Backend only
 make frontend   # Frontend only
 ```
+
+### Stopping the Application
+
+**Quick Stop:**
+```bash
+# Linux/macOS
+./stop.sh
+
+# Windows PowerShell
+.\stop.ps1
+
+# Windows Command Prompt
+stop.bat
+```
+
+**Or press Ctrl+C** in the terminal running the launch script.
 
 ### Accessing the Application
 
@@ -149,9 +217,6 @@ data_anonymizer/
 ### Running Development Commands
 
 ```bash
-# Install development dependencies
-pip install -r dev-requirements.txt
-
 # Format code
 make format
 
