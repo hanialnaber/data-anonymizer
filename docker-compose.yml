@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  data-anonymizer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    volumes:
+      - ./samples:/app/samples
+      - ./config:/app/config
+    environment:
+      - ANONYMIZER_SALT=${ANONYMIZER_SALT:-default-super-secret-salt-change-me}
+      - PYTHONPATH=/app/src
+    restart: unless-stopped

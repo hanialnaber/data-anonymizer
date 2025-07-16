@@ -1,0 +1,46 @@
+"""Development dependencies for the data anonymizer project."""
+
+# Code quality
+black>=23.0.0
+isort>=5.0.0
+flake8>=5.0.0
+mypy>=1.0.0
+bandit>=1.7.0
+
+# Security testing
+safety>=2.0.0
+
+# Performance monitoring
+memory-profiler>=0.60.0
+psutil>=5.0.0
+
+# Documentation
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.0.0
+
+# API testing
+httpx>=0.24.0
+fastapi[all]>=0.100.0
+uvicorn>=0.23.0
+
+# Database testing
+sqlalchemy>=2.0.0
+alembic>=1.11.0
+
+# Development tools
+pre-commit>=3.0.0
+tox>=4.0.0
+
+# Jupyter notebook support
+notebook>=6.0.0
+ipython>=8.0.0
+
+# Data manipulation and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+xlrd>=2.0.0
+
+# Visualization (for reports)
+matplotlib>=3.7.0
+seaborn>=0.12.0
