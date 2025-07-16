@@ -158,19 +158,11 @@ stop.bat
 ### 🎯 Advanced Anonymization Methods
 - **14 Anonymization Techniques**: From basic hashing to advanced differential privacy
 - **Context-Aware Processing**: Smart detection and handling of different data types (emails, phones, SSNs)
-- **Configurable Security**: Multiple hash algorithms (SHA-256, SHA-512) and privacy levels
 - **Quality Assessment**: Built-in privacy scoring and validation
 
-### 🔐 Enterprise Security
-- **File Validation**: Comprehensive security checks for uploaded files
-- **Cryptographic Security**: Secure random generation and salt-based hashing
-- **Audit Logging**: Complete operation tracking and compliance reporting
-- **Auto-Cleanup**: Automatic temporary file management
-
-### 📊 Privacy Compliance
+###  Privacy Compliance
 - **GDPR Ready**: Full compliance with EU privacy regulations
 - **HIPAA Support**: Healthcare data anonymization standards
-- **Audit Trail**: Complete operation logging for compliance
 
 ### 🌐 Web Interface
 - **Intuitive Frontend**: User-friendly Streamlit interface
@@ -226,9 +218,6 @@ make lint
 # Type checking
 make type-check
 
-# Security checks
-make security-check
-
 # All quality checks
 make pre-commit
 ```
@@ -253,11 +242,6 @@ make docker-stop
 Copy `.env.example` to `.env` and configure:
 
 ```bash
-# Security settings
-SECRET_KEY=your-secret-key-here
-HASH_ALGORITHM=sha256
-ENABLE_AUDIT_LOG=true
-
 # File upload settings
 MAX_FILE_SIZE=10MB
 ALLOWED_EXTENSIONS=.csv,.xlsx,.xls
@@ -276,11 +260,6 @@ You can modify settings in `config/settings.py`:
 DEFAULT_HASH_ALGORITHM = "sha256"
 DEFAULT_PRIVACY_LEVEL = "medium"
 ENABLE_DIFFERENTIAL_PRIVACY = True
-
-# Security settings
-ENABLE_FILE_VALIDATION = True
-ENABLE_AUDIT_LOGGING = True
-AUTO_CLEANUP_ENABLED = True
 ```
 
 ## 📊 Usage Examples
@@ -343,27 +322,7 @@ result = anonymizer.anonymize_dataset(
 )
 ```
 
-## 🔒 Security Features
-
-### File Validation
-- **Type Checking**: Validates file extensions and MIME types
-- **Size Limits**: Configurable maximum file size
-- **Content Scanning**: Checks for malicious content
-- **Path Traversal Protection**: Prevents directory traversal attacks
-
-### Cryptographic Security
-- **Secure Hashing**: SHA-256/512 with salt
-- **Random Generation**: Cryptographically secure random values
-- **Key Management**: Secure key storage and rotation
-- **Privacy Levels**: Configurable anonymization strength
-
-### Audit and Compliance
-- **Operation Logging**: Complete audit trail
-- **Privacy Scoring**: Quantitative privacy assessment
-- **Compliance Reporting**: GDPR/HIPAA compliance reports
-- **Data Lineage**: Track data transformation history
-
-## 🔍 Sample Data
+##  Sample Data
 
 The application includes comprehensive sample data for testing:
 

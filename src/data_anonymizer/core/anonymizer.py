@@ -1,4 +1,4 @@
-"""Core anonymization functionality with enhanced security and privacy features."""
+"""Core anonymization functionality."""
 
 import hashlib
 import json
@@ -18,11 +18,11 @@ from .config import Config
 
 
 class DataAnonymizer:
-    """Enhanced data anonymization with multiple techniques and security features."""
+    """Data anonymization with multiple techniques."""
 
     def __init__(self, salt: Optional[str] = None):
         """Initialize the anonymizer with optional salt."""
-        self.salt = salt or Config.ANONYMIZER_SALT
+        self.salt = salt or "default_salt"
         self.config = Config()
         # Use cryptographically secure random for all operations
         self.secure_random = secrets.SystemRandom()

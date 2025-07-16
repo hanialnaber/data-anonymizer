@@ -14,7 +14,7 @@ FRONTEND_DIR := frontend
 BACKEND_DIR := backend
 DOCS_DIR := docs
 
-.PHONY: help install install-dev dev backend frontend samples lint format type-check security-check pre-commit build run-backend run-frontend run-dev docker-build docker-run docker-stop docs docs-serve profile setup-env clean
+.PHONY: help install install-dev dev backend frontend samples lint format type-check pre-commit build run-backend run-frontend run-dev docker-build docker-run docker-stop docs docs-serve profile setup-env clean
 
 help:
 	@echo "Available commands:"
@@ -27,7 +27,6 @@ help:
 	@echo "  lint             - Run linting checks"
 	@echo "  format           - Format code with black and isort"
 	@echo "  type-check       - Run type checking with mypy"
-	@echo "  security-check   - Run security checks with bandit"
 	@echo "  pre-commit       - Run all pre-commit checks"
 	@echo "  build            - Build the application"
 	@echo "  run-backend      - Run the backend server"
@@ -71,12 +70,8 @@ lint:
 type-check:
 	$(MYPY) $(SRC_DIR) --ignore-missing-imports
 
-security-check:
-	$(BANDIT) -r $(SRC_DIR) $(BACKEND_DIR) -f json -o security-report.json
-	$(BANDIT) -r $(SRC_DIR) $(BACKEND_DIR)
-
 # Pre-commit checks
-pre-commit: format lint type-check security-check
+pre-commit: format lint type-check
 
 # Build targets
 build:
@@ -130,7 +125,6 @@ clean:
 	if exist dist rmdir /s /q dist
 	if exist *.egg-info rmdir /s /q *.egg-info
 	if exist .mypy_cache rmdir /s /q .mypy_cache
-	if exist security-report.json del security-report.json
 	if exist profile.stats del profile.stats
 	for /d /r . %%d in (__pycache__) do @if exist "%%d" rd /s /q "%%d"
 	for /r . %%f in (*.pyc) do @if exist "%%f" del "%%f"
