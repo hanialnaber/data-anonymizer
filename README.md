@@ -10,7 +10,33 @@ A comprehensive web application for anonymizing sensitive data in CSV and Excel 
 - pip (Python package manager)
 - Git (for cloning the repository)
 
-### Installation
+### Installation & Running
+
+#### Option 1: One-Command Launch (Recommended) 🚀
+
+**For Windows:**
+```powershell
+# PowerShell
+.\launch.ps1
+
+# Or Command Prompt
+launch.bat
+```
+
+**For Linux/macOS:**
+```bash
+./launch.sh
+```
+
+This single command will:
+- ✅ Clone the repository (if needed)
+- ✅ Set up virtual environment
+- ✅ Install all dependencies
+- ✅ Generate sample data
+- ✅ Start both FastAPI backend and Streamlit frontend
+- ✅ Open the web interface automatically
+
+#### Option 2: Manual Installation & Setup
 
 1. **Clone the repository**:
    ```bash
@@ -39,32 +65,13 @@ A comprehensive web application for anonymizing sensitive data in CSV and Excel 
    pip install -e .
    ```
 
-### Running the Application
+5. **Run the application**:
+   ```bash
+   # Run both backend and frontend together
+   python scripts/dev.py dev
+   ```
 
-#### Option 1: One-Command Launch (Recommended) 🚀
-
-**For Windows:**
-```powershell
-# PowerShell
-.\launch.ps1
-
-# Or Command Prompt
-launch.bat
-```
-
-**For Linux/macOS:**
-```bash
-./launch.sh
-```
-
-This single command will:
-- ✅ Set up virtual environment
-- ✅ Install all dependencies
-- ✅ Generate sample data
-- ✅ Start both FastAPI backend and Streamlit frontend
-- ✅ Open the web interface automatically
-
-#### Option 2: Advanced Launch Options
+#### Option 3: Advanced Launch Options
 
 **Setup only (no start):**
 ```bash
@@ -91,12 +98,6 @@ This single command will:
 
 # Windows PowerShell
 .\launch.ps1 -NoSamples
-```
-
-#### Option 3: Manual Setup (Alternative)
-```bash
-# Run both backend and frontend together
-python scripts/dev.py dev
 ```
 
 #### Option 4: Run Services Separately
@@ -140,18 +141,19 @@ stop.bat
 - **Backend API**: http://localhost:8000
 - **API Documentation**: http://localhost:8000/docs
 
-### First-Time Setup
+### Getting Started
 
-1. **Generate sample data** (optional):
-   ```bash
-   python scripts/dev.py samples
-   ```
-
+1. **Launch the application** using any of the options above
 2. **Try the application**:
    - Open http://localhost:8501 in your browser
    - Upload a CSV or Excel file
    - Select anonymization methods for each column
    - Download the anonymized file
+
+**Optional**: Generate additional sample data:
+```bash
+python scripts/dev.py samples
+```
 
 ## ✨ Features
 
