@@ -124,6 +124,34 @@ data_anonymizer/
 └── stop.bat/.sh           # Stop scripts
 ```
 
+## 📊 Performance & File Handling
+
+The Data Anonymizer efficiently handles files of all sizes with intelligent processing strategies:
+
+### File Size Categories
+
+| File Size | Rows | Processing Time | Memory Usage | Strategy |
+|-----------|------|----------------|--------------|----------|
+| **Small** | < 50K | < 5 seconds | ~2-5MB | Direct processing |
+| **Medium** | 50K-500K | 5-30 seconds | ~10-50MB | Optimized operations |
+| **Large** | 500K-5M | 30-300 seconds | ~50-200MB | Chunked processing |
+| **Very Large** | > 5M | Variable | Controlled | Concurrent chunks |
+
+### Processing Features
+
+- **🚀 Automatic Optimization**: Detects file size and chooses optimal processing strategy
+- **💾 Memory Management**: Intelligent chunking prevents memory overflow
+- **⚡ Concurrent Processing**: Multi-threaded processing for large datasets
+- **🔄 Progress Tracking**: Real-time progress bars for long operations
+- **🛡️ Error Recovery**: Fallback strategies for memory-limited systems
+
+### Supported Formats
+
+- **CSV Files**: Streaming support, efficient chunked processing
+- **Excel Files**: Multi-sheet support, sheet-by-sheet processing
+- **Large Files**: Automatic chunking for files > 100MB
+- **Memory Optimization**: Garbage collection and memory cleanup
+
 ## � Usage Examples
 
 ### How to Use
