@@ -1,6 +1,41 @@
 # 🔒 Data Anonymizer
 
-A comprehensive web application for anonymizing sensitive data in CSV and Excel files with 14+ anonymization methods, built with FastAPI and Streamlit.
+A comprehensive web application for anonymizing sensitive data in CSV and Excel files with 14+ anonymization methods, built wi- **Excel Files**: Multi-sheet support, sheet-by-sheet processing
+- **Large Files**: Automatic chunking for files > 100MB
+- **Memory Optimization**: Garbage collection and memory cleanup
+
+## 🏗️ Architecture: Backend vs Frontend Processing
+
+The Data Anonymizer uses a **client-server architecture** with clear separation of responsibilities:
+
+### 🔧 Backend Processing (FastAPI - Port 8000)
+- **Core Anonymization**: All data processing and anonymization algorithms
+- **File I/O**: Loading, processing, and saving files with memory optimization
+- **Background Jobs**: Asynchronous processing for large files
+- **API Endpoints**: RESTful API for file upload, processing, and status
+
+### 🖥️ Frontend Processing (Streamlit - Port 8501)
+- **User Interface**: File upload, configuration, and download interface
+- **API Communication**: Sends requests to backend for processing
+- **Progress Display**: Real-time feedback and status updates
+- **Configuration Management**: User-friendly form for anonymization settings
+
+### 🔄 Data Flow
+1. **Frontend**: User uploads file through web interface
+2. **Frontend → Backend**: File sent via HTTP API to backend
+3. **Backend**: Core processing and anonymization occurs
+4. **Backend → Frontend**: Results sent back to frontend
+5. **Frontend**: User downloads anonymized file
+
+**Key Benefits**:
+- **Separation of Concerns**: UI logic separate from processing logic
+- **Scalability**: Backend can handle multiple requests concurrently
+- **Performance**: Heavy processing happens on backend, UI stays responsive
+- **Security**: Sensitive processing isolated from frontend
+
+> 📖 **For detailed architecture documentation with code examples and testing**, see [`ARCHITECTURE_GUIDE.md`](ARCHITECTURE_GUIDE.md)
+
+## 📝 Usage ExamplesstAPI and Streamlit.
 
 ## 🚀 Quick Start
 
