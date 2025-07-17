@@ -4,17 +4,51 @@ A comprehensive web application for anonymizing sensitive data in CSV and Excel 
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.8 or higher
-- pip (Python package manager)
-
-### Installation
+### For First-Time Users (Recommended)
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/hanialnaber/data-anonymizer.git
    cd data-anonymizer
    ```
+
+2. **Run the launch script**:
+   
+   **Windows:**
+   ```cmd
+   launch.bat
+   ```
+   
+   **Linux/macOS:**
+   ```bash
+   ./launch.sh
+   ```
+   
+   This will automatically:
+   - Set up the environment
+   - Install dependencies
+   - Start the application
+   - Open your browser to http://localhost:8501
+
+3. **To stop the application**:
+   
+   **Windows:**
+   ```cmd
+   stop.bat
+   ```
+   
+   **Linux/macOS:**
+   ```bash
+   ./stop.sh
+   ```
+
+### Manual Installation (Advanced Users)
+
+If you prefer to install manually:
+
+1. **Prerequisites:**
+   - Python 3.8 or higher
+   - pip (Python package manager)
 
 2. **Install dependencies**:
    ```bash
@@ -23,7 +57,6 @@ A comprehensive web application for anonymizing sensitive data in CSV and Excel 
 
 3. **Run the application**:
    ```bash
-   # Start the web application
    streamlit run frontend/streamlit_app.py
    ```
 
@@ -50,9 +83,9 @@ A comprehensive web application for anonymizing sensitive data in CSV and Excel 
 
 ### 🌐 Web Interface
 - **Intuitive Frontend**: User-friendly Streamlit interface
-- **REST API**: Complete FastAPI backend for integration
 - **Real-time Processing**: Live preview and validation
 - **Multi-format Support**: CSV, Excel, and multi-sheet files
+- **Easy Setup**: One-click launch scripts for all platforms
 
 ## 📋 Available Anonymization Methods
 
@@ -83,25 +116,20 @@ data_anonymizer/
 │       │   ├── anonymizer.py
 │       │   ├── config.py
 │       │   └── security.py
-│       ├── api/            # FastAPI backend
-│       │   ├── main.py
-│       │   └── routes/
 │       └── utils/          # Utility functions
-├── frontend/               # Streamlit frontend
+├── frontend/               # Streamlit web interface
 │   └── streamlit_app.py
-├── tests/                  # Comprehensive test suite
 ├── samples/                # Sample data files
-├── config/                 # Configuration files
-├── scripts/                # Development scripts
-└── docs/                   # Documentation
+├── launch.bat/.sh          # Launch scripts
+└── stop.bat/.sh           # Stop scripts
 ```
 
 ## � Usage Examples
 
 ### How to Use
 
-1. **Launch the application** using the installation steps above
-2. **Open** http://localhost:8501 in your browser
+1. **Launch the application** using the launch script above
+2. **Open** http://localhost:8501 in your browser (should open automatically)
 3. **Upload** a CSV or Excel file
 4. **Select** anonymization methods for each column
 5. **Preview** the anonymized data
