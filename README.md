@@ -38,7 +38,7 @@ This single command will:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/data-anonymizer.git
+   git clone https://github.com/hanialnaber/data-anonymizer.git
    cd data-anonymizer
    ```
 
