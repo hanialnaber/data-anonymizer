@@ -232,9 +232,11 @@ class DataAnonymizer:
         if not isinstance(ssn, str):
             return str(ssn)
 
-        # Generate consistent fake SSN
+        # Generate consistent fake SSN using numeric values
         hash_val = self._generate_secure_hash(ssn, "sha256")
-        fake_ssn = f"{hash_val[:3]}-{hash_val[3:5]}-{hash_val[5:9]}"
+        # Convert hash to numeric values only
+        numeric_hash = ''.join(str(ord(c) % 10) for c in hash_val)
+        fake_ssn = f"{numeric_hash[:3]}-{numeric_hash[3:5]}-{numeric_hash[5:9]}"
 
         # Preserve original format if different
         if re.match(r"\d{3}-\d{2}-\d{4}", ssn):
