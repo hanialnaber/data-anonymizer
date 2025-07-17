@@ -35,7 +35,6 @@ The Data Anonymizer uses a **client-server architecture** with clear separation 
 
 > 📖 **For detailed architecture documentation with code examples and testing**, see [`ARCHITECTURE_GUIDE.md`](ARCHITECTURE_GUIDE.md)
 
-## 📝 Usage ExamplesstAPI and Streamlit.
 
 ## 🚀 Quick Start
 
@@ -197,7 +196,6 @@ The Data Anonymizer efficiently handles files of all sizes with intelligent proc
 4. **Select** anonymization methods for each column
 5. **Preview** the anonymized data
 6. **Download** the anonymized file
-```
 
 ## 📊 Sample Data
 
@@ -221,7 +219,3 @@ Access these files through the web interface or use them for testing.
 - **Financial**: Customer data anonymization, PCI DSS compliance  
 - **HR**: Employee data anonymization, GDPR compliance
 - **Research**: Dataset sharing, privacy-preserving analytics
-
----
-
-**Note**: This tool is designed for legitimate data anonymization purposes. Always ensure compliance with applicable privacy laws and regulations in your jurisdiction.
